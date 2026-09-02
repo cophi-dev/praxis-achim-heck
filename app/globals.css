@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #18265a;
+  --navy-deep: #10183a;
+  --brand: #253e93;
+  --brand-soft: #6d84d5;
+  --cream: #f3eee5;
+  --sand: #e5d9c6;
+  --ink: #16181f;
+  --muted: #5a6170;
+  --paper: #fbf8f2;
+  --gold: #b8945a;
+  --line: rgba(22, 24, 31, 0.08);
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-paper: var(--paper);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-cormorant);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+::selection { background: #253e93; color: #fbf8f2; }
+.serif { font-family: var(--font-cormorant), Georgia, serif; }
+.gold-rule { width: 3rem; height: 1px; background: var(--gold); }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-up { animation: fade-up 0.8s ease both; }
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.24s; }
+.delay-3 { animation-delay: 0.36s; }

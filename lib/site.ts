@@ -23,6 +23,26 @@ export const site = {
   vatId: "49 / 089 / 01075",
 } as const;
 
+export const links = {
+  vod: "https://www.osteopathie.de",
+  afo: "https://www.osteopathie-akademie.de/",
+  afoAusbildung: "https://www.osteopathie-akademie.de/ausbildung/",
+  aon: "https://www.osteopathie-aon.de/",
+  osteokompass: "https://www.osteokompass.de",
+  route: "https://www.google.com/maps/search/?api=1&query=53.642103,10.020767",
+  aufsichtsbehoerde: "https://www.hamburg.de/politik-und-verwaltung/bezirke/hamburg-nord/anmeldung-berufe-im-gesundheitswesen-71880",
+  heilprg: "https://www.gesetze-im-internet.de/heilprg/",
+  heilprgdv: "https://www.gesetze-im-internet.de/heilprgdv_1/",
+} as const;
+
+export const downloads = {
+  tagebuch: {
+    href: "/pdf/tagebuch-eines-erfolgreichen-heilungsverlaufs.pdf",
+    title: "Tagebuch eines erfolgreichen Heilungsverlaufs",
+    meta: "PDF · 116 KB · 9 Seiten",
+  },
+} as const;
+
 export const prices = {
   ersttermin: { label: "Ersttermin", amount: 135, unit: "€", hint: "Anamnese, Untersuchung und Behandlung" },
   folgetermin: { label: "Folgetermin", amount: 90, unit: "€", hint: "Weiterführende osteopathische Therapie" },

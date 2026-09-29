@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PageHero } from "@/components/PageHero";
+import { NewTabLink } from "@/components/NewTabLink";
+import { PageHero, heroLinkClass } from "@/components/PageHero";
+import { VerbandDownloads } from "@/components/VerbandDownloads";
+import { links } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Infos",
@@ -11,7 +14,16 @@ export const metadata: Metadata = {
 export default function InfosPage() {
   return (
     <>
-    <PageHero kicker="Infos" title="Hier sind Sie in sicheren Händen" lead="30 Jahre Erfahrung, ein abgeschlossenes Osteopathiestudium gemäß der Richtlinien der Akademie für Osteopathie (AFO), regelmäßige Fortbildungen, Mitglied im Verband der Osteopathen Deutschland e.V. (VOD) und im Experten Allianz für Sport, Fitness & Gesundheit e.V." />
+    <PageHero
+      kicker="Infos"
+      title="Hier sind Sie in sicheren Händen"
+      lead={
+        <>
+          30 Jahre Erfahrung, ein abgeschlossenes Osteopathiestudium gemäß der Richtlinien der{" "}
+          <NewTabLink href={links.afo} className={heroLinkClass}>Akademie für Osteopathie (AFO)</NewTabLink>, regelmäßige Fortbildungen, Mitglied im Verband der Osteopathen Deutschland e.V. (VOD) und im Experten Allianz für Sport, Fitness & Gesundheit e.V.
+        </>
+      }
+    />
     <section className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
       <div className="grid gap-6 md:grid-cols-3">
         <Link href="#wissen" className="border border-ink/8 p-7 transition hover:border-gold">
@@ -29,6 +41,7 @@ export default function InfosPage() {
 </Link>
       </div>
     </section>
+    <VerbandDownloads />
     <section id="wissen" className="scroll-mt-28 bg-cream">
       <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-24">
         <p className="text-[0.7rem] tracking-[0.24em] text-gold uppercase">Wissenswertes</p>

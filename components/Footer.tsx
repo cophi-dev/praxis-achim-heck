@@ -41,6 +41,7 @@ export function Footer() {
             <Image src="/images/experten-allianz.jpg" alt="Experten Allianz für Gesundheit e.V." width={110} height={90} className="h-12 w-auto rounded-sm bg-white p-1" />
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-sand/70">
+            <Link href="/infos#verband" className="hover:text-cream">Verband & Downloads</Link>
             {legalNav.map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-cream">{item.label}</Link>
             ))}

@@ -1,4 +1,8 @@
-export function PageHero({ kicker, title, lead }: { kicker?: string; title: string; lead?: string }) {
+import type { ReactNode } from "react";
+
+export const heroLinkClass = "text-cream underline decoration-gold underline-offset-4 transition hover:decoration-cream";
+
+export function PageHero({ kicker, title, lead }: { kicker?: string; title: string; lead?: ReactNode }) {
   return (
     <section className="bg-navy pt-28 pb-16 text-cream md:pt-36 md:pb-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">

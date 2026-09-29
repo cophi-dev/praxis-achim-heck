@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
+import { ArrowOutIcon, PinIcon } from "@/components/icons";
+import { NewTabLink } from "@/components/NewTabLink";
 import { PageHero } from "@/components/PageHero";
+import { links } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Kontakt & Anfahrt",
@@ -42,6 +45,11 @@ export default function KontaktPage() {
     <section className="bg-cream">
       <div className="mx-auto max-w-6xl px-5 py-10 md:px-8">
         <iframe title="Google Karte Praxis Achim Heck" className="h-[420px] w-full border-0 grayscale" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=53.642103,10.020767&z=16&hl=de&output=embed" />
+        <NewTabLink href={links.route} className="group mt-4 inline-flex min-h-12 items-center gap-3 text-[0.72rem] tracking-[0.18em] text-navy uppercase focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+          <PinIcon className="size-5 text-gold" />
+          <span className="decoration-gold underline-offset-4 group-hover:underline">Route planen in Google Maps</span>
+          <ArrowOutIcon className="size-4 text-gold transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </NewTabLink>
       </div>
     </section>
     </>

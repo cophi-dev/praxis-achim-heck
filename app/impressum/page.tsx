@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import { NewTabLink } from "@/components/NewTabLink";
 import { PageHero } from "@/components/PageHero";
+import { links } from "@/lib/site";
+
+const linkClass = "text-navy underline decoration-gold underline-offset-4";
 
 export const metadata: Metadata = {
   title: "Impressum",
@@ -13,7 +17,7 @@ export default function ImpressumPage() {
       <section>
         <h2 className="text-navy">Angaben gem. § 5 DDG</h2>
         <p className="mt-4">
-          Achim Heck<br />Heilpraktiker (verliehen in der Bundesrepublik Deutschland)<br />Die Erlaubnis zur berufsmäßigen Ausübung der Heilkunde ohne Bestallung wurde durch die zuständige Behörde der Freien und Hansestadt Hamburg erteilt.<br />Osteopath (AFO) & Sportphysiotherapeut (VPT)<br />Beim Schäferhof 76<br />22415{" "}Hamburg<br />040. 278 81 728<br />info@achimheck.de<br />www.achimheck.de
+          Achim Heck<br />Heilpraktiker (verliehen in der Bundesrepublik Deutschland)<br />Die Erlaubnis zur berufsmäßigen Ausübung der Heilkunde ohne Bestallung wurde durch die zuständige Behörde der Freien und Hansestadt Hamburg erteilt.<br /><NewTabLink className={linkClass} href={links.afoAusbildung}>Osteopath (AFO)</NewTabLink> & Sportphysiotherapeut (VPT)<br />Beim Schäferhof 76<br />22415{" "}Hamburg<br />040. 278 81 728<br />info@achimheck.de<br />www.achimheck.de
         </p>
       </section>
       <section>
@@ -25,13 +29,13 @@ export default function ImpressumPage() {
       <section>
         <h2 className="text-navy">Aufsichtsbehörde</h2>
         <p className="mt-4">
-          Gesundheitsamt Hamburg-Nord<br />Eppendorfer Landstr. 59<br />20249 Hamburg<br /><a className="text-navy underline decoration-gold underline-offset-4" href="http://hamburg.de/hamburg-nord/fachamt-gesundheit">hamburg.de/hamburg-nord/fachamt-gesundheit</a>
+          Gesundheitsamt Hamburg-Nord<br />Eppendorfer Landstr. 59<br />20249 Hamburg<br /><NewTabLink className={linkClass} href={links.aufsichtsbehoerde}>hamburg.de – Fachamt Gesundheit Hamburg-Nord</NewTabLink>
         </p>
       </section>
       <section>
         <h2 className="text-navy">Berufsrechtliche Regelungen</h2>
         <p className="mt-4">
-          Gesetz über die berufsmäßige Ausübung der Heilkunde ohne Bestallung (<a className="text-navy underline decoration-gold underline-offset-4" href="https://www.gesetze-im-internet.de/heilprg/">Heilpraktikergesetz, HeilprG</a>)<br />Erste Durchführungsverordnung zum Heilpraktikergesetz (<a className="text-navy underline decoration-gold underline-offset-4" href="https://www.gesetze-im-internet.de/heilprgdv_1/">HeilprGDV 1</a>)
+          Gesetz über die berufsmäßige Ausübung der Heilkunde ohne Bestallung (<NewTabLink className={linkClass} href={links.heilprg}>Heilpraktikergesetz, HeilprG</NewTabLink>)<br />Erste Durchführungsverordnung zum Heilpraktikergesetz (<NewTabLink className={linkClass} href={links.heilprgdv}>HeilprGDV 1</NewTabLink>)
         </p>
       </section>
       <section>

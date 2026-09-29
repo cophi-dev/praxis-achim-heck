@@ -139,7 +139,10 @@ export default function HomePage() {
         <p className="mt-4 text-base leading-relaxed text-muted">
           10-jähriges Osteopathie-Studium, langjährige Erfahrung in Klinik, Reha und freier Praxis. Ziel: ursächlich Beschwerden lindern, die Selbstheilungskräfte anregen und Homöostase wiederherstellen.
         </p>
-        <Link href="/therapeut" className="mt-8 inline-flex text-[0.72rem] tracking-[0.18em] text-navy uppercase">Vita lesen →</Link>
+        <div className="mt-5 flex flex-wrap gap-x-8">
+          <Link href="/therapeut" className="inline-flex min-h-12 items-center text-[0.72rem] tracking-[0.18em] text-navy uppercase">Vita lesen →</Link>
+          <Link href="/infos#verband" className="inline-flex min-h-12 items-center text-[0.72rem] tracking-[0.18em] text-navy uppercase">Verband & Downloads →</Link>
+        </div>
       </div>
       <div className="order-1 justify-self-center md:order-2">
         <Image src="/images/achim-heck.jpg" alt="Achim Heck, Heilpraktiker und Osteopath" width={420} height={560} className="h-[420px] w-auto bg-white object-contain object-top md:h-[500px]" />

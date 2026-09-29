@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NewTabLink } from "@/components/NewTabLink";
 import { PageHero } from "@/components/PageHero";
+import { links } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Leistungen",
@@ -48,7 +50,7 @@ export default function LeistungenPage() {
             Ein qualifizierter Osteopath beurteilt stets das parietale, viszerale und kraniosakrale Organsystem, um eine ganzheitliche, differenzierte Diagnose und Therapie gewährleisten zu können.
           </p>
           <p className="mt-6 text-sm">
-            Mehr zur Osteopathie beim{" "}<a className="text-navy underline decoration-gold underline-offset-4" href="https://www.osteopathie.de" target="_blank" rel="noreferrer">Verband der Osteopathen (VOD)</a>.
+            Mehr zur Osteopathie beim{" "}<NewTabLink className="text-navy underline decoration-gold underline-offset-4" href={links.vod}>Verband der Osteopathen (VOD)</NewTabLink>.
           </p>
         </div>
       </div>

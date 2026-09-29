@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NewTabLink } from "@/components/NewTabLink";
 import { PageHero } from "@/components/PageHero";
+import { links } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Kosten & Zuschüsse",
@@ -103,7 +105,7 @@ export default function KostenPage() {
         <div>
           <h2 className="serif text-3xl text-navy">Kostenerstattung</h2>
           <p className="mt-6 leading-relaxed text-muted">
-            Für Bezuschussungen osteopathischer Behandlungskosten gesetzlicher Krankenkassen müssen Sie vor Behandlungsbeginn eine formlose Bescheinigung eines Schulmediziners besorgen. Erkundigen Sie sich bei Ihrer Krankenkasse über aktuelle Zuschüsse für Osteopathie unter{" "}<a className="text-navy underline decoration-gold underline-offset-4" href="https://www.osteokompass.de" target="_blank" rel="noreferrer">osteokompass.de</a>.
+            Für Bezuschussungen osteopathischer Behandlungskosten gesetzlicher Krankenkassen müssen Sie vor Behandlungsbeginn eine formlose Bescheinigung eines Schulmediziners besorgen. Erkundigen Sie sich bei Ihrer Krankenkasse über aktuelle Zuschüsse für Osteopathie unter{" "}<NewTabLink className="text-navy underline decoration-gold underline-offset-4" href={links.osteokompass}>osteokompass.de</NewTabLink>.
           </p>
           <p className="mt-4 leading-relaxed text-muted">
             Private Krankenversicherungen und Beihilfestellen (ausgenommen Beihilfe Hamburg und Beihilfe Saarland) erstatten die Kosten je nach Tarif im Rahmen des Gebührenverzeichnisses für Heilpraktiker (GebüH von 1985).

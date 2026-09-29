@@ -47,7 +47,7 @@ export default function KontaktPage() {
         <iframe title="Google Karte Praxis Achim Heck" className="h-[420px] w-full border-0 grayscale" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=53.642103,10.020767&z=16&hl=de&output=embed" />
         <NewTabLink href={links.route} className="group mt-4 inline-flex min-h-12 items-center gap-3 text-[0.72rem] tracking-[0.18em] text-navy uppercase focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
           <PinIcon className="size-5 text-gold" />
-          <span className="decoration-gold underline-offset-4 group-hover:underline">Route planen · in Google Maps öffnen</span>
+          <span className="decoration-gold underline-offset-4 group-hover:underline">Route planen in Google Maps</span>
           <ArrowOutIcon className="size-4 text-gold transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </NewTabLink>
       </div>

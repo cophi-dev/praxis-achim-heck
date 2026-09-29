@@ -8,7 +8,11 @@ import { nav, site } from "@/lib/site";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  useEffect(() => { setOpen(false); }, [pathname]);
+  const [menuPath, setMenuPath] = useState(pathname);
+  if (menuPath !== pathname) {
+    setMenuPath(pathname);
+    setOpen(false);
+  }
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };

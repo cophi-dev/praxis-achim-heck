@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NewTabLink } from "@/components/NewTabLink";
 import { PageHero } from "@/components/PageHero";
+import { downloads } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Tagebuch eines erfolgreichen Heilungsverlaufs",
@@ -13,7 +15,7 @@ export default function HeilungsverlaufPage() {
     <PageHero kicker="Motivatar" title="Tagebuch eines erfolgreichen Heilungsverlaufs" lead="Mehrfach gebrochener Finger ohne OP in nur vier Wochen. Ein Beispiel für intrinsische Motivation." />
     <article className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-24">
       <p className="text-sm text-muted">
-        Originaldokument aus der bestehenden Website – hier vollständig lesbar.{" "}<a className="text-navy underline decoration-gold underline-offset-4" href="/pdf/tagebuch-eines-erfolgreichen-heilungsverlaufs.pdf">PDF herunterladen</a>
+        Originaldokument aus der bestehenden Website – hier vollständig lesbar.{" "}<NewTabLink className="text-navy underline decoration-gold underline-offset-4" href={downloads.tagebuch.href}>PDF herunterladen</NewTabLink>
       </p>
       <section className="mt-14">
         <p className="text-[0.7rem] tracking-[0.2em] text-gold uppercase">11. Juni 2023</p>

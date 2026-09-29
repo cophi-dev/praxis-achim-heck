@@ -29,13 +29,13 @@ export default function ImpressumPage() {
       <section>
         <h2 className="text-navy">Aufsichtsbehörde</h2>
         <p className="mt-4">
-          Gesundheitsamt Hamburg-Nord<br />Eppendorfer Landstr. 59<br />20249 Hamburg<br /><a className="text-navy underline decoration-gold underline-offset-4" href="http://hamburg.de/hamburg-nord/fachamt-gesundheit">hamburg.de/hamburg-nord/fachamt-gesundheit</a>
+          Gesundheitsamt Hamburg-Nord<br />Eppendorfer Landstr. 59<br />20249 Hamburg<br /><NewTabLink className={linkClass} href={links.aufsichtsbehoerde}>hamburg.de – Fachamt Gesundheit Hamburg-Nord</NewTabLink>
         </p>
       </section>
       <section>
         <h2 className="text-navy">Berufsrechtliche Regelungen</h2>
         <p className="mt-4">
-          Gesetz über die berufsmäßige Ausübung der Heilkunde ohne Bestallung (<a className="text-navy underline decoration-gold underline-offset-4" href="https://www.gesetze-im-internet.de/heilprg/">Heilpraktikergesetz, HeilprG</a>)<br />Erste Durchführungsverordnung zum Heilpraktikergesetz (<a className="text-navy underline decoration-gold underline-offset-4" href="https://www.gesetze-im-internet.de/heilprgdv_1/">HeilprGDV 1</a>)
+          Gesetz über die berufsmäßige Ausübung der Heilkunde ohne Bestallung (<NewTabLink className={linkClass} href={links.heilprg}>Heilpraktikergesetz, HeilprG</NewTabLink>)<br />Erste Durchführungsverordnung zum Heilpraktikergesetz (<NewTabLink className={linkClass} href={links.heilprgdv}>HeilprGDV 1</NewTabLink>)
         </p>
       </section>
       <section>

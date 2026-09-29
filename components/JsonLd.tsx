@@ -4,7 +4,7 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     name: site.title,
-    image: `${site.url}/s/cc_images/teaserbox_2499221576.png`,
+    image: `${site.url}/images/praxis.jpg`,
     url: site.url,
     telephone: site.phoneHref.replace("tel:", ""),
     email: site.email,

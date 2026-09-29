@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { PageHero } from "@/components/PageHero";
+import { NewTabLink } from "@/components/NewTabLink";
+import { PageHero, heroLinkClass } from "@/components/PageHero";
+import { links } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Therapeut",
@@ -10,7 +12,15 @@ export const metadata: Metadata = {
 export default function TherapeutPage() {
   return (
     <>
-    <PageHero kicker="Therapeut" title="Achim Heck" lead="Osteopath und Mitglied im Verband der Osteopathen Deutschland e.V. sowie im Experten Allianz für Sport, Fitness & Gesundheit e.V." />
+    <PageHero
+      kicker="Therapeut"
+      title="Achim Heck"
+      lead={
+        <>
+          <NewTabLink href={links.afoAusbildung} className={heroLinkClass}>Osteopath</NewTabLink> und Mitglied im Verband der Osteopathen Deutschland e.V. sowie im Experten Allianz für Sport, Fitness & Gesundheit e.V.
+        </>
+      }
+    />
     <section className="mx-auto grid max-w-6xl items-start gap-12 px-5 py-16 md:grid-cols-[0.8fr_1.2fr] md:px-8 md:py-24">
       <div className="bg-cream p-6">
         <Image src="/images/achim-heck.jpg" alt="Porträt Achim Heck" width={720} height={1013} className="h-auto w-full bg-white object-contain" />
@@ -41,7 +51,8 @@ export default function TherapeutPage() {
         </p>
         <p>Im Januar 2000 ist die Eröffnung seiner Praxis für Ganzheitliche Medizin im medizinischen Versorgungszentrum Hamburg-Winterhude.</p>
         <p>
-          Sein berufsbegleitendes Osteopathie-Studium beginnt 2002 an der Osteopathieschule Deutschland (OSD) in Hamburg. Achim setzt sein Studium nach kurzer Unterbrechung als junger Familienvater an der ehemaligen Osteopathieschule Damp weiter fort. In dieser Zeit gründet Dr. med. Edgar Hinkelthein seine Akademie für Osteopathie und Naturheilverfahren (AON) in Kiel. Hier beendet Achim 2013 mit erfolgreichem und gutem Abschluss sein sehr umfangreiches 10-jähriges Osteopathie-Studium (AFO).
+          Sein berufsbegleitendes Osteopathie-Studium beginnt 2002 an der Osteopathieschule Deutschland (OSD) in Hamburg. Achim setzt sein Studium nach kurzer Unterbrechung als junger Familienvater an der ehemaligen Osteopathieschule Damp weiter fort. In dieser Zeit gründet Dr. med. Edgar Hinkelthein seine{" "}
+          <NewTabLink href={links.aon} className="text-navy underline decoration-gold underline-offset-4">Akademie für Osteopathie und Naturheilverfahren (AON)</NewTabLink> in Kiel. Hier beendet Achim 2013 mit erfolgreichem und gutem Abschluss sein sehr umfangreiches 10-jähriges Osteopathie-Studium (AFO).
         </p>
         <p>Seit 2004 lebt Achim Heck im Norden Hamburgs mit seiner Familie in Nachbarschaft zum Hamburger Flughafen und praktiziert hier im eigenen Haus.</p>
       </article>

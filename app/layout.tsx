@@ -10,7 +10,7 @@ const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"], display: 
 const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["latin"], weight: ["500", "600", "700"], display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://praxis-achim-heck.vercel.app"),
+  metadataBase: new URL("https://www.achimheck.de"),
   title: { default: `${site.title} | ${site.tagline}`, template: `%s | ${site.title}` },
   description: site.description,
   keywords: ["Osteopathie Hamburg", "Heilpraktiker Langenhorn", "Physiotherapie Hamburg Nord", "Chiropraktik Hamburg", "Achim Heck", "Sportphysiotherapie"],

@@ -33,6 +33,9 @@ export default function DatenschutzPage() {
         <p className="mt-4">
           Wenn Sie das Kontaktformular nutzen, werden Name, E-Mail, Telefon und Nachricht ausschließlich zum Zweck der Kontaktaufnahme verarbeitet. Die Einwilligung können Sie jederzeit widerrufen.
         </p>
+        <p className="mt-4">
+          Zur Reichweitenmessung zählen wir Seitenaufrufe sowie Klicks auf Telefon- und E-Mail-Links und das Absenden des Kontaktformulars. Dabei werden keine Cookies gesetzt, keine Daten im Endgerät gespeichert, keine IP-Adressen gespeichert und keine Nutzerprofile erstellt; gespeichert werden nur anonyme Tageszählerstände je Seite. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in der Verbesserung unseres Webangebots. Verantwortlich ist die oben genannte Stelle.
+        </p>
       </section>
       <section>
         <h2 className="text-navy">4. Rechte der betroffenen Person</h2>

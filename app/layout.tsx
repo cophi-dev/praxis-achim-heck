@@ -33,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <Footer />
         <a href={site.phoneHref} className="fixed right-4 bottom-4 z-40 rounded-full bg-navy px-5 py-3 text-[0.7rem] tracking-[0.16em] text-cream uppercase shadow-lg md:hidden">Anrufen</a>
+      <script defer src="https://wv-stats.vercel.app/c.js" data-s="achimheck" />
       </body>
     </html>
   );

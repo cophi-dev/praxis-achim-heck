@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
+import { issueContactStamp } from "@/lib/contact-guard";
 import { ArrowOutIcon, PinIcon } from "@/components/icons";
 import { NewTabLink } from "@/components/NewTabLink";
 import { PageHero } from "@/components/PageHero";
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
   description: "Terminanfrage, Öffnungszeiten und Anfahrt zur Praxis Achim Heck, Beim Schäferhof 76, 22415 Hamburg-Langenhorn.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function KontaktPage() {
+  const ts = issueContactStamp();
   return (
     <>
     <PageHero kicker="Kontakt" title="Termin anfragen" lead="Nachrichten können Sie gerne unter 040. 278 81 728 hinterlassen. Wir rufen zurück – oder nutzen Sie das Formular." />
@@ -39,7 +43,7 @@ export default function KontaktPage() {
       <div className="bg-cream p-6 md:p-8">
         <h2 className="serif text-3xl text-navy">Formular</h2>
         <p className="mt-3 mb-8 text-sm text-muted">Für Ihre erste Terminanfrage. Alle Felder mit * sind Pflichtfelder.</p>
-        <ContactForm />
+        <ContactForm ts={ts} />
       </div>
     </section>
     <section className="bg-cream">

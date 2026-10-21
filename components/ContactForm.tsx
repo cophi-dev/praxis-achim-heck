@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 type Status = "idle" | "sending" | "ok" | "error";
 type ErrorKind = "validation" | "send";
 
-export function ContactForm() {
+export function ContactForm({ ts }: { ts: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorKind, setErrorKind] = useState<ErrorKind>("validation");
 
@@ -20,6 +20,7 @@ export function ContactForm() {
     const message = String(data.get("message") || "").trim();
     const consent = data.get("consent");
     const hp = String(data.get("hp") || "").trim();
+    const submittedTs = String(data.get("ts") || ts).trim();
     if (!name || !email || !phone || !message || !consent) {
       setErrorKind("validation");
       setStatus("error");
@@ -30,7 +31,7 @@ export function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, email, phone, message, consent: true, hp }),
+        body: JSON.stringify({ name, email, phone, message, consent: true, hp, ts: submittedTs }),
       });
       const payload = (await response.json().catch(() => null)) as { ok?: boolean } | null;
       if (!response.ok || !payload?.ok) {
@@ -75,6 +76,7 @@ export function ContactForm() {
           <input type="text" name="hp" tabIndex={-1} autoComplete="off" defaultValue="" />
         </label>
       </div>
+      <input type="hidden" name="ts" value={ts} readOnly autoComplete="off" />
       {status === "error" && errorKind === "validation" && <p className="text-sm text-red-700">Bitte füllen Sie alle Pflichtfelder aus und bestätigen Sie die Einwilligung.</p>}
       {status === "error" && errorKind === "send" && (
         <p className="text-sm text-red-700" role="alert">

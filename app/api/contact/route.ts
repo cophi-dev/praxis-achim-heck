@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { z } from "zod";
+import { contactRejectionReason } from "@/lib/contact-guard";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1).max(200),
@@ -14,6 +15,11 @@ type ContactResponse = { ok: true } | { ok: false; error: string };
 
 function json(body: ContactResponse, status = 200) {
   return Response.json(body, { status });
+}
+
+function rejectBot(reason: string) {
+  console.warn("contact: rejected", { reason });
+  return json({ ok: true });
 }
 
 function escapeHtml(value: string) {
@@ -72,15 +78,21 @@ export async function POST(request: Request) {
     return json({ ok: false, error: "Bitte füllen Sie alle Pflichtfelder aus und bestätigen Sie die Einwilligung." }, 400);
   }
 
-  const honeypot = "hp" in raw && typeof raw.hp === "string" ? raw.hp.trim() : "";
-  if (honeypot) {
-    return json({ ok: true });
-  }
+  const body = raw as Record<string, unknown>;
+  const honeypot = typeof body.hp === "string" ? body.hp.trim() : "";
+  if (honeypot) return rejectBot("honeypot");
 
-  const parsed = contactSchema.safeParse(raw);
+  const parsed = contactSchema.safeParse(body);
   if (!parsed.success) {
     return json({ ok: false, error: "Bitte füllen Sie alle Pflichtfelder aus und bestätigen Sie die Einwilligung." }, 400);
   }
+
+  const botReason = contactRejectionReason({
+    name: parsed.data.name,
+    message: parsed.data.message,
+    ts: body.ts,
+  });
+  if (botReason) return rejectBot(botReason);
 
   const apiKey = process.env.RESEND_API_KEY?.trim();
   const to = recipients(process.env.CONTACT_TO ?? "");

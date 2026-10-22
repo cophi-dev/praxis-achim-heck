@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/92 via-navy-deep/70 to-navy-deep/25" />
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pt-28 pb-16 md:justify-center md:px-8 md:pb-24">
         <p className="animate-fade-up text-[0.7rem] tracking-[0.32em] text-gold uppercase">OSTEO  /  PHYSIO  /  CHIRO  /  SPORT  /  THERAPIE</p>
-        <h1 className="serif animate-fade-up delay-1 mt-5 max-w-3xl text-4xl leading-[1.1] text-cream sm:text-6xl md:text-7xl">Die Praxis im Norden Hamburgs</h1>
+        <h1 className="serif animate-fade-up delay-1 mt-5 max-w-3xl text-4xl leading-[1.1] text-cream sm:text-6xl md:text-7xl">Praxis Achim Heck im Norden Hamburgs</h1>
         <p className="animate-fade-up delay-2 mt-6 max-w-xl text-base leading-relaxed text-sand md:text-lg">
           Ihr Heilpraktiker für tiefgreifende Diagnostik und nachhaltige Therapiekonzepte.{" Osteopathische Behandlungen werden hier von vielen gesetzlichen Krankenkassen bezuschusst."}
         </p>
